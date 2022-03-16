@@ -21,7 +21,6 @@ domain="www.google.com"
     echo "Host terhubung dengan internet"
   else
     echo "Host tidak terhubung dengan internet"
-    echo "Silahkan cek koneksi host dengan internet terlebih dahulu"
   fi
 echo
 echo Please wait downloading node exporter...
@@ -29,8 +28,8 @@ wget -q https://github.com/prometheus/node_exporter/releases/download/v$Version/
 echo
 echo Extracting package...
 sleep 3s
-tar xfz node_exporter-$Version.linux-amd64.tar.gz | echo Done..
-echo
+tar xfz node_exporter-$Version.linux-amd64.tar.gz
+echo Done
 mv node_exporter-$Version.linux-amd64 /opt/node-exporter
 echo Creating systemd service ...
 sleep 3s
